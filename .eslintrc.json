@@ -1,0 +1,52 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["airbnb"],
+  "plugins": ["prettier", "react", "jsx-a11y", "import"],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.3"
+    }
+  },
+  "globals": {
+    "document": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js"] }],
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "preferButton" ]
+    }],
+    "max-len": [ 1, { "ignoreStrings": true } ],
+    "semi": ["error", "never"],
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "stories/**/*.js",
+        "user-stories/**/*.js",
+        "webpack.config.js",
+        "doczrc.js",
+        "src/index.js",
+        "e2e/**/*.js",
+        "**/__tests__/**/*.js",
+        "__mocks__/**/*.js"
+      ]
+    }]
+  }
+}

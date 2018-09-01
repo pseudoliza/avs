@@ -1,0 +1,50 @@
+---
+name: Button
+menu: Button
+---
+
+import { Playground, PropsTable } from 'docz'
+import { ThemeProvider } from 'styled-components'
+import { PrimaryButton, SecondaryButton } from './Button'
+import theme from 'src/styles/theme.styled'
+
+# InviteButton
+
+## Properties
+
+<PropsTable of={PrimaryButton} />
+
+## Basic usage
+<Playground style={{ backgroundColor: 'rgb(247, 247, 247)' }} >
+  <ThemeProvider theme={theme} >
+    <div>
+      <PrimaryButton>
+        Invite Member
+      </PrimaryButton>
+      <SecondaryButton>
+        Invite Member
+      </SecondaryButton>
+    </div>
+  </ThemeProvider>
+</Playground>
+
+## Another company color
+<Playground style={{ backgroundColor: 'rgb(247, 247, 247)' }} >
+  {() => {
+    const newTheme = JSON.parse(JSON.stringify(theme))
+    newTheme.colors.companyColor = '#8CA798'
+
+    return (
+      <ThemeProvider theme={newTheme} >
+        <div>
+          <PrimaryButton>
+            Invite Member
+          </PrimaryButton>
+          <SecondaryButton>
+            Invite Member
+          </SecondaryButton>
+        </div>
+      </ThemeProvider>
+    )
+  }}
+</Playground>
